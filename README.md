@@ -62,7 +62,7 @@ On ganache UI (under **Transactions** tab), you will see three contracts (**CONT
 Following this, run the python file:
 `python app.py`
 
-You will see, the transaction and data transfer along with payload between different wallets (GRID Areas). Tis python scripts contains 3 parts:
+You will see, the transaction and data transfer along with payload between different wallets (GRID Areas). This python scripts contains 3 parts:
 - Establishing Connections: The transaction in a smart contract can happen only if there is connection established between GRIDS. The smart contract [GRID Connections](https://github.com/yashmadhwal/secureDataTransmission/blob/main/Truffle_GRID/contracts/GridConnections.sol) is deployed only by the auditor and upon the request can establish or remove connection.
 - Data communications: Smart contract [Data Commuications](https://github.com/yashmadhwal/secureDataTransmission/blob/main/Truffle_GRID/contracts/GRIDdataCommunication.sol) is deployed by Auditor, but the communication happens directly among the GRID areas.
 - Removing Connection: Method is in the contract [GRID Connections](https://github.com/yashmadhwal/secureDataTransmission/blob/main/Truffle_GRID/contracts/GridConnections.sol), where only the auditor can remove the connections.
