@@ -3,19 +3,19 @@
 
 This is repository for running a Decentralized Application (DAPP), for GRID communication
 
-#### Features:
+### Features:
 
 - Deploy blockchain application on local computer
 - Easy to run python scripts
 - Experiment results based on arbitrary input on the proposed model
 
-#### Prerequisites
+### Prerequisites
 - Download and install [Python 3.7](https://www.python.org/downloads/)
 - Instal [Node.js](https://nodejs.org/en/download/) and npm (comes with node)
 - [Git](https://git-scm.com/downloads)
 - Download and install [Ganache UI](https://www.trufflesuite.com/ganache).
 
-#### Installation
+### Installation
 After download and installing the above prerequisites, Now, it will be time for installing required libraries. There might be chances that some of the required modules comes preinstalled.
 
 Open terminal or command prompt of you computer and run the following commands:
@@ -28,4 +28,45 @@ Open terminal or command prompt of you computer and run the following commands:
 
 **Note**: Although, the above mentioned scripts should be sufficient to run the application. If any problem arises, please check the python version and library that you are running.
 
-#### Cloning the repository
+### Cloning the repository
+Download or clone the repository. Open terminal or command prompt and redirect to folder Truffle_GRID
+`cd Truffle_GRID`
+
+### Running DApp
+
+Once in the folder **Truffle_GRID**.
+Open Ganache UI, It will present you with the set of Ethereum Wallets with 100ETH each. For this prototype we require minimum of 5 wallets, so if the number of wallets are less than 5, please configue the number of accounts in Ganache's settings, such that the number of wallets are 5 or more. If the accounts are more, it is normal, but we will require only 5.
+
+**Note**: If you want same Wallets as the following example, copy-paste the Mnemonic in the settings
+*`magnet fatal pill denial such kidney pear learn fever lab mom weird`*
+
+GRID's Wallets:
+| Wallet | Owner |
+| ------ | ------ |
+| `0x9CC190A96e287418e5DeBec96Ea139ca5db7c9e8` | *Auditor*|
+| `0xda8F98eD2b9dC061a876C6039Fe58E8272af0AF7` | *Area_1* |
+| `0x2Fd6Bed5ca468f1f3C78adaD7BdcE8f97f8Fd547` | *Area_2* |
+| `0xC0818f17A1178b2Da1E2E6937aeE6A8E6Ee8D07e` | *Area_3* |
+| `0xb6d35CD088a35BE0A8d18f7d6b1e1781430DD045` | *Area_4* |
+
+In the terminal, first compile the smart contract:
+`truffle compile`
+And now, migrate it to the blockchain:
+`truffle migrate`
+
+On ganache UI (under **Transactions** tab), you will see three contracts (**CONTRACT CREATION**) that were deployed from the Auditor's wallet:
+- Migration Contract
+- GridConnections
+- GRIDdataCommunication
+
+Following this, run the python file:
+`python app.py`
+
+You will see, the transaction and data transfer along with payload between different wallets (GRID Areas). Tis python scripts contains 3 parts:
+- Establishing Connections: The transaction in a smart contract can happen only if there is connection established between GRIDS. The smart contract [GRID Connections](https://github.com/yashmadhwal/secureDataTransmission/blob/main/Truffle_GRID/contracts/GridConnections.sol) is deployed only by the auditor and upon the request can establish or remove connection.
+- Data communications: Smart contract [Data Commuications](https://github.com/yashmadhwal/secureDataTransmission/blob/main/Truffle_GRID/contracts/GRIDdataCommunication.sol) is deployed by Auditor, but the communication happens directly among the GRID areas.
+- Removing Connection: Method is in the contract [GRID Connections](https://github.com/yashmadhwal/secureDataTransmission/blob/main/Truffle_GRID/contracts/GridConnections.sol), where only the auditor can remove the connections.
+
+You can explore Ganache UI to explore blockchain or use web3py library for python to get detailed analysis.
+
+Based on this contract, we conducted the following experiments. (To be continued)
