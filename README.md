@@ -69,4 +69,4 @@ You will see, the transaction and data transfer along with payload between diffe
 
 You can explore Ganache UI to explore blockchain or use web3py library for python to get detailed analysis.
 
-Based on this contract, we conducted the following experiments. (To be continued)
+Based on this contract, we conducted the experiments.
