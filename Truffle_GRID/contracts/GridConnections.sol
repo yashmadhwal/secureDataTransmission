@@ -32,7 +32,7 @@ contract MappingAddressConnection {
         require(connections[_from][_to] == true, 'connections not established');
         connections[_from][_to] = false;
 
-        emit gridconnectionEvent(_from, _to, true);
+        emit gridconnectionEvent(_from, _to, false);
     }
 
     modifier onlyOwner{
