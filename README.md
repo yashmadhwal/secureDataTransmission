@@ -92,4 +92,4 @@ Bases on the connection status, for example, connection status true between the 
     | **_value** | *array* | Payload of data that is transfered, with each iteration different datas of different size transfered|
 
 ## References:
-[1] Asefi, S., Madhwal, Y., Yanovich, Y., & Gryazina, E. (2021). Application of blockchain for secure data transmission in distributed state estimation. arXiv preprint arXiv:2104.04232.
+[[1]](https://arxiv.org/pdf/2104.04232.pdf) Asefi, S., Madhwal, Y., Yanovich, Y., & Gryazina, E. (2021). Application of blockchain for secure data transmission in distributed state estimation. arXiv preprint arXiv:2104.04232.
